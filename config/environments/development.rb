@@ -38,4 +38,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+###########################################################
+  # Sets local host address to localhost:3000.
+  # Use real domain name if available
+  # config/environments/{development,test}.rb
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+###########################################################
 end
