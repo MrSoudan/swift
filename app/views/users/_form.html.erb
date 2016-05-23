@@ -1,72 +1,35 @@
-<a id="close_sign_up_form"><b>x</b></a>
-<div class="container" id="sign_up_form">
-      <div class="row main">
-        <div class="panel-heading">
-                 <div class="panel-title text-center">
-                    <h1 class="title">Sign Up Here</h1>
-                    <hr />
-                  </div>
-              </div> 
-        <div class="main-login main-center">
-          <form class="form-horizontal" method="post" action="/users">
-            
-            <div class="form-group">
-              <label for="first_name" class="cols-sm-2 control-label">Given Name</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="first_name" id="name"  placeholder="Enter your Name"/>
-                </div>
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label for="last_name" class="cols-sm-2 control-label">Sur Name</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="last_name" id="username"  placeholder="Enter your Surname"/>
-                </div>
-              </div>
-            </div>
+<form class="form-inline">
+ <div class="gender-preference-field">
+  <%= form.label :I_am_a%>
+  <%= form.select :gender, options_for_select([["Male"],["Female"]])%>
 
-            <div class="form-group">
-              <label for="email" class="cols-sm-2 control-label">Your Email</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-                </div>
-              </div>
-            </div>
+  <%= form.label :looking_for %>
+  <%= form.select :preference, options_for_select([["Female"],["Male"],["Both"]])%>
+ </div>
+</form>
 
-            <div class="form-group">
-              <label for="password" class="cols-sm-2 control-label">Password</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-                </div>
-              </div>
-            </div>
+<div class="country-field"><strong>Country</strong>
+ <%= form.country_select :country, collection: CountryStateSelect.countries_collection %>
+</div>
 
-            <div class="form-group">
-              <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-                </div>
-              </div>
-            </div>
+<div class="state-field">
+ <%= form.label :state%>
+ <%= form.text_field :state%>
 
-            <div class="form-group ">
-              <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-            </div>
-            <div class="login-register">
-                    <a href="/sign_in">Login</a>
-                 </div>
-          </form>
-        </div>
-      </div>
-    </div>
+ <%#= options = { form: form, field_names: { :country => :country, :state => :state_field } }
+
+   form.state_field, CountryStateSelect.state_options(options) %>
+
+</div>
+
+<div class="nick-name-field">
+ <%= form.label :nick_name %>
+ <%= form.text_field :nick_name%>
+</div>
+
+<div class="description-field">
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+</div>
+

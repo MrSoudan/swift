@@ -36,6 +36,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 ##############################################################
 #Rails authentication with email & password.
 gem 'clearance'
+#facebook login
+gem 'omniauth-facebook'
+#Figaro parses a Git-ignored YAML file in your application and loads its values into ENV
+gem "figaro"
 
 ##############################################################
 
